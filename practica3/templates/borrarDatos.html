@@ -1,0 +1,31 @@
+{% extends 'index.html' %}
+
+{% block title %}Borrar Datos{% endblock %}
+
+{% block contenido %}
+    <h1 class="text-center">Borrar Datos</h1>
+    {% if mensaje %}
+        <div class="alert {% if mensaje|lower == 'error' %}alert-danger{% else %}alert-success{% endif %}" role="alert">
+            {{ mensaje }}
+        </div>
+    {% endif %}
+    <div class="text-center">
+        <form method="GET" action="{% url 'borrarDatos' %}" style="display: inline-block;">
+            <button type="submit" class="btn btn-danger">Borrar Todo</button>
+        </form>
+    </div>
+{% endblock %}
+
+{% block estilos %}
+    <style>
+        .alert {
+            margin-bottom: 20px;
+        }
+        .text-center {
+            text-align: center;
+        }
+        button.btn {
+            margin-top: 10px;
+        }
+    </style>
+{% endblock %}

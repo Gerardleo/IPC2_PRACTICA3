@@ -1,0 +1,74 @@
+{% extends 'index.html' %}
+
+{% block title %}Datos personales{% endblock %}
+
+{% block contenido %}
+    <h1 style="text-align: center;">Datos personales</h1>
+    
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <h2 class="card-title">Datos Personales</h2>
+            </div>
+            <div class="card-body">
+                <div class="campo">
+                    <label for="nombre">Nombre:</label>
+                    <span>Gerardo Ortiz</span>
+                </div>
+                <div class="campo">
+                    <label for="carnet">Carnet:</label>
+                    <span>202200196</span>
+                </div>
+                <!-- Agrega más campos de datos según sea necesario -->
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .card-header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .card-title {
+            margin: 0;
+            font-size: 24px;
+            text-align: center;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .campo {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .campo label {
+            flex: 1;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .campo span {
+            flex: 2;
+            color: #555;
+            font-size: 18px;
+        }
+    </style>
+{% endblock %}

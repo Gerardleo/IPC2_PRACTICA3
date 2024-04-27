@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barra de Navegación</title>
+    <!-- Agrega el enlace al CSS de Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Estilos adicionales personalizados */
+        body {
+            padding-top: 60px; /* Ajusta el espacio para que el navbar no se superponga al contenido */
+        }
+        .navbar-custom {
+            background-color: #3498db; /* Color de fondo del navbar */
+        }
+        .navbar-custom .navbar-brand,
+        .navbar-custom .navbar-text {
+            color: #ffffff; /* Color del texto del navbar */
+        }
+        .navbar-custom .navbar-nav .nav-link {
+            color: #ffffff; /* Color de los enlaces del navbar */
+        }
+        .navbar-custom .navbar-nav .nav-link:hover,
+        .navbar-custom .navbar-nav .nav-link:focus {
+            color: #ffffff; /* Color de los enlaces al pasar el ratón o al hacer clic */
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top navbar-custom">
+        <div class="container">
+            <a class="navbar-brand" href="#">Mis Mascotas</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'index' %}">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'cargarArchivo' %}">Cargar Datos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'procesarDatos' %}">Procesar Datos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'datosPersonales' %}">Datos Estudiantes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'borrar' %}">Borrar Datos</a>
+                    </li>
+                    <!-- Agrega más opciones de navegación según sea necesario -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        {% block contenido %}{% endblock %}
+    </div>
+
+    <!-- Agrega los scripts de Bootstrap al final del documento para una carga más rápida -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+{% extends 'index.html' %}
+
+{% block title %}Procesar Datos{% endblock %}
+
+{% block contenido %}
+    <h1>Procesar Datos</h1>
+    {% if mensaje %}
+        <div class="alert {% if mensaje|lower == 'error' %}alert-danger{% else %}alert-success{% endif %}" role="alert">
+            {{ mensaje }}
+        </div>
+    {% endif %}
+    <form method="GET" action="{% url 'procesarDatosSalida' %}" style="text-align: center; margin-top: 20px;">
+        <button type="submit" class="btn btn-primary" style="margin: 10px;">Procesar Nuevamente</button>
+    </form>
+    <div class="card resultado-xml">
+        <div class="card-header">
+            <h4 class="card-title">Resultado XML:</h4>
+        </div>
+        <div class="card-body">
+            <pre>{{ xml }}</pre>
+        </div>
+    </div>
+   
+{% endblock %}
+
+{% block estilos %}
+    <style>
+        .resultado-xml {
+            margin-top: 20px;
+            border: 1px solid #007bff; /* Color del borde */
+            border-radius: 10px; /* Borde redondeado */
+            overflow: hidden; /* Oculta el desbordamiento del contenido */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        }
+
+        .resultado-xml .card-header {
+            background-color: #007bff; /* Color de fondo del encabezado */
+            color: #fff; /* Color del texto en el encabezado */
+            padding: 10px;
+        }
+
+        .resultado-xml pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            margin: 0; /* Elimina el margen predeterminado del pre */
+            padding: 10px;
+        }
+    </style>
+{% endblock %}

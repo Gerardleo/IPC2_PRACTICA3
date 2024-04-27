@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ingesoAnimales>
+    <perro>
+        <edad>5 meses</edad>
+        <raza>Labrador</raza>
+    </perro>
+    <gato>
+        <edad>3 años</edad>
+        <raza>Siames</raza>
+    </gato>
+    <pajaro>
+        <nombre>Pajaro</nombre>
+        <edad>1 mes</edad>
+        <raza>Canario</raza>
+    </pajaro>
+    <conejo>
+        <edad>2 meses</edad>
+        <raza>Enano</raza>
+    </conejo>
+</ingesoAnimales>
